@@ -33,9 +33,9 @@ export default function Product() {
 
    }
 
-   function edit(id){
+   function edit1112(id){
     setEditID(id)
-    document.querySelector(".bu-iki").style=`display:block`
+    document.querySelector(".bu-iki-2").style=`display:block`
    }
 
    function ozgar(){
@@ -90,9 +90,6 @@ function ozgarID(){
 
 function orqaga(){
   document.querySelector(".bu-uch").style='display:none'
-}
-function salom(){
-  document.querySelector(".bu-iki").style='display:none'
 }
 
 
@@ -429,7 +426,7 @@ function ozgard11(){
         <td  onClick={()=>boshqapage(item.id)}>{item.phone}</td>
         <td  onClick={()=>boshqapage(item.id)}>{item.creator}</td>
         <td><button onClick={()=>modalOpen(item.id)}>delete</button></td>
-        <td><button onClick={()=>edit(item.id)}>edit</button></td>
+        <td><button onClick={()=>edit1112(item.id)}>edit</button></td>
   </tr>
       </>
     )
@@ -448,11 +445,11 @@ function ozgard11(){
 </div>
 </div>
 
-<div className="bu-iki">
+<div className="bu-iki-2">
 <div className="modal-delete">
     <div className="modal-ichi-inp">
       <div className="x-dv">
-        <div className="xx"onClick={()=>salom()}>
+        <div className="xx" onClick={()=>document.querySelector(".bu-iki-2").style=`display:none`}>
           X
         </div>
       </div>
@@ -493,9 +490,9 @@ function ozgard11(){
       <span>Добавить адрес</span> <br />
       <input type="text" id='oz1' /><br />
       <span>Добавить локацию</span><br />
-      <input type="text" id='oz2' /><br />
+      <input type="number" id='oz2' /><br />
       <span>Добавить язык</span><br />
-      <input type="text" id='oz3' /><br />
+      <input type="number" id='oz3' /><br />
       <span>Добавить название</span><br />
       <input type="text" id='oz4' /><br />
       <span>Добавить текст</span><br />

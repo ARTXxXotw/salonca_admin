@@ -169,7 +169,7 @@ function Sidenav({ color }) {
             <span className="label">Product</span>
           </NavLink>
         </Menu.Item>
-        <Menu.Item key="2">
+        {/* <Menu.Item key="2">
           <NavLink to="/tables">
             <span
               className="icon"
@@ -181,7 +181,7 @@ function Sidenav({ color }) {
             </span>
             <span className="label">Tables</span>
           </NavLink>
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item key="2">
           <NavLink to="/Filyal_mark">
             <span
@@ -195,19 +195,19 @@ function Sidenav({ color }) {
             <span className="label">Filyal_mark</span>
           </NavLink>
         </Menu.Item>
-        {/* <Menu.Item key="2">
-          <NavLink to="/Spetsalist">
+        <Menu.Item key="2">
+          <NavLink to="/Xususiyat">
             <span
               className="icon"
               style={{
-                background: page === "Spetsalist" ? color : "",
+                background: page === "Xususiyat" ? color : "",
               }}
             >
               {tables}
             </span>
-            <span className="label">специалист</span>
+            <span className="label">Xususiyat</span>
           </NavLink>
-        </Menu.Item> */}
+        </Menu.Item>
         {/* <Menu.Item key="2">
           <NavLink to="/Mutahasis_time">
             <span

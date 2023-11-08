@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Spetsalist from "./pages/Spetsalist";
 import Filyal_mark from "./pages/Filyal_mark";
+import Xususiyat from "./pages/Xususiyat";
 import Tables from "./pages/Tables";
 import Mutahasis_time from "./pages/Mutahasis_time";
 import Billing from "./pages/Billing";
@@ -16,6 +17,7 @@ import "antd/dist/antd.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
 // Mutahasis_time
+// Xususiyat
 function App() {
   return (
     <div className="App">
@@ -26,6 +28,7 @@ function App() {
           
         <Route exact path="/Product" component={Product} />
         <Route exact path="/Filyal_mark" component={Filyal_mark} />
+        <Route exact path="/Xususiyat" component={Xususiyat} />
           <Route exact path="/tables" component={Tables} />
           <Route exact path="/Spetsalist" component={Spetsalist} />
           <Route exact path="/Mutahasis_time" component={Mutahasis_time} />

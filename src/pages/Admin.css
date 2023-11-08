@@ -27,7 +27,7 @@
   }
   .modal-ichi{
     width: 500px;
-    height: 200px;
+    height: 150px;
     background: #ffffff;
     border-radius: 20px;
     text-align: center;
@@ -172,4 +172,46 @@
   }
   .bu-filyal-42{
     display: none;
+  }
+  .bu-filyal-omagad-2ss2{
+    display: none ;
+  }
+  .bu-filyal-omagad-2ss22{
+    display: none;
+  }
+  .bu-filyal-omagad-2ss23{
+    display: none;
+  }
+  .bu-filyalas-xusisiyat{
+    display: none;
+  }
+  .bu-filyal-omagad-2a2ssa{
+    display: none;
+  }
+  input{
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  .modal-ichi-inp span{
+    margin-bottom: 20px;
+  }
+  .bu-iki-2{
+    display: none;
+  }
+  select{
+    width: 80%;
+    
+  }
+  .asas{
+    display: flex;
+    justify-content: end;
+  }
+  .height{
+    height: 20px;
+  }
+  #category1{
+    margin-top: 10px;
+  }
+  #category2{
+    margin-top: 10px;
   }

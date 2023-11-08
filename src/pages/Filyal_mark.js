@@ -163,7 +163,7 @@ function abzaljini(){
 <div className="bu-oyna">
 <div className="modal-delete">
     <div className="modal-ichi-inp">
-        <div className="">
+        <div className="asas">
 <div className="xx" onClick={()=>x()}>
 X
 
