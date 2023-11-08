@@ -208,6 +208,19 @@ function Sidenav({ color }) {
             <span className="label">Xususiyat</span>
           </NavLink>
         </Menu.Item>
+        <Menu.Item key="2">
+          <NavLink to="/Zakaz">
+            <span
+              className="icon"
+              style={{
+                background: page === "Zakaz" ? color : "",
+              }}
+            >
+              {tables}
+            </span>
+            <span className="label">Zakaz</span>
+          </NavLink>
+        </Menu.Item>
         {/* <Menu.Item key="2">
           <NavLink to="/Mutahasis_time">
             <span
