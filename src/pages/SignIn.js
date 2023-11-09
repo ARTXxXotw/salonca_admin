@@ -19,6 +19,8 @@ import {
   InstagramOutlined,
   GithubOutlined,
 } from "@ant-design/icons";
+import axios from "axios";
+import url from "../Host";
 function onChange(checked) {
   console.log(`switch to ${checked}`);
 }
@@ -113,6 +115,19 @@ export default class SignIn extends Component {
     const onFinishFailed = (errorInfo) => {
       console.log("Failed:", errorInfo);
     };
+    function Login(){
+      var formdata=new FormData()
+      formdata.append("email",document.querySelector("#email").value)
+      formdata.append("password",document.querySelector("#password").value)
+
+      axios.post(`${url}/api/login`,formdata).then(res=>{
+        alert("Ishladi")
+        window.location="/Product"
+        sessionStorage.setItem("token",res.data.token)
+      }).catch(err=>{
+        alert("xato")
+      })
+    }
     return (
       <>
         <Layout className="layout-default layout-signin">
@@ -137,6 +152,7 @@ export default class SignIn extends Component {
                     className="username"
                     label="Email"
                     name="email"
+                    id="email"
                     rules={[
                       {
                         required: true,
@@ -149,6 +165,7 @@ export default class SignIn extends Component {
 
                   <Form.Item
                     className="username"
+                    id="password"
                     label="Password"
                     name="password"
                     rules={[
@@ -172,6 +189,7 @@ export default class SignIn extends Component {
 
                   <Form.Item>
                     <Button
+                      onClick={()=>Login()}
                       type="primary"
                       htmlType="submit"
                       style={{ width: "100%" }}

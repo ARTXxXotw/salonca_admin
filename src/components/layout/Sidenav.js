@@ -221,6 +221,19 @@ function Sidenav({ color }) {
             <span className="label">Zakaz</span>
           </NavLink>
         </Menu.Item>
+        <Menu.Item key="2">
+          <NavLink to="/User">
+            <span
+              className="icon"
+              style={{
+                background: page === "User" ? color : "",
+              }}
+            >
+              {tables}
+            </span>
+            <span className="label">User</span>
+          </NavLink>
+        </Menu.Item>
         {/* <Menu.Item key="2">
           <NavLink to="/Mutahasis_time">
             <span
@@ -264,7 +277,7 @@ function Sidenav({ color }) {
           </NavLink>
         </Menu.Item>
         <Menu.Item key="7">
-          <NavLink to="/sign-in">
+          <NavLink onClick={()=>{sessionStorage.removeItem("token");window.location="/sign-in"}} to="sign-in">
             <span className="icon">{signin}</span>
             <span className="label">Sign In</span>
           </NavLink>
