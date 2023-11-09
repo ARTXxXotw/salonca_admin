@@ -121,11 +121,11 @@ export default class SignIn extends Component {
       formdata.append("password",document.querySelector("#password").value)
 
       axios.post(`${url}/api/login`,formdata).then(res=>{
-        alert("Ishladi")
+        alert("Успешно")
         window.location="/Product"
         sessionStorage.setItem("token",res.data.token)
       }).catch(err=>{
-        alert("xato")
+        alert("error")
       })
     }
     return (

@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   Row,
@@ -32,10 +32,16 @@ import convesionImg5 from "../assets/images/face-2.jpg";
 import project1 from "../assets/images/home-decor-1.jpeg";
 import project2 from "../assets/images/home-decor-2.jpeg";
 import project3 from "../assets/images/home-decor-3.jpeg";
+import axios from "axios";
 
 function Profile() {
   const [imageURL, setImageURL] = useState(false);
   const [, setLoading] = useState(false);
+  const [data1,setData]=useState([]);
+
+  useEffect(()=>{
+    axios.get(``)
+  })
 
   const getBase64 = (img, callback) => {
     const reader = new FileReader();
