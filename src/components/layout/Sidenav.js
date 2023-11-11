@@ -234,6 +234,33 @@ function Sidenav({ color }) {
             <span className="label">User</span>
           </NavLink>
         </Menu.Item>
+        <Menu.Item key="2">
+          <NavLink to="/Metro">
+            <span
+              className="icon"
+              style={{
+                background: page === "Metro" ? color : "",
+              }}
+            >
+              {tables}
+            </span>
+            <span className="label">Metro</span>
+          </NavLink>
+        </Menu.Item>
+        
+        <Menu.Item key="3">
+          <NavLink to="/Rayon">
+            <span
+              className="icon"
+              style={{
+                background: page === "Rayon" ? color : "",
+              }}
+            >
+              {tables}
+            </span>
+            <span className="label">Rayon</span>
+          </NavLink>
+        </Menu.Item>
         {/* <Menu.Item key="2">
           <NavLink to="/Mutahasis_time">
             <span

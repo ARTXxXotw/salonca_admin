@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Spetsalist from "./pages/Spetsalist";
 import Filyal_mark from "./pages/Filyal_mark";
+import Metro from "./pages/Metro";
+import Rayon from "./pages/Rayon";
 import Zakaz from "./pages/Zakaz";
 import Xususiyat from "./pages/Xususiyat";
 import Tables from "./pages/Tables";
@@ -33,6 +35,8 @@ function App() {
         <Route exact path="/Product" component={Product} />
         <Route exact path="/User" component={User} />
         <Route exact path="/Filyal_mark" component={Filyal_mark} />
+        <Route exact path="/Metro" component={Metro} />
+        <Route exact path="/Rayon" component={Rayon} />
         <Route exact path="/Xususiyat" component={Xususiyat} />
         <Route exact path="/Zakaz" component={Zakaz} />
         <Route exact path="/tables" component={Tables} />
