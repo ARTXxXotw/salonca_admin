@@ -20,7 +20,7 @@ export default function User() {
 
   function userDelete(){
     axios.delete(`${url}/api/users/${userId}`).then(res=>{
-        alert("O'chirilid")
+        alert("delete")
         window.location.reload()
     }).catch(err=>{
         alert("O'chirilmadi")
@@ -44,7 +44,7 @@ export default function User() {
     formdata.append("email",document.querySelector("#email_user").value)
 
     axios.put(`${url}/api/users/${userId}`,formdata).then(res=>{
-        alert("ishladi")
+        alert("успешно")
         window.location.reload()
     }).catch(err=>{
         alert("ishlamdi")
