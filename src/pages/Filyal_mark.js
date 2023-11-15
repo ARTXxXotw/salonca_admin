@@ -143,11 +143,11 @@ function abzaljini(){
 </div>
 </div>
         <span>mark</span><br />
-        <input type="number" id='fil' /><br />
+        <input type="text" id='fil' /><br />
         <span>text</span><br />
         <input type="text" id='fil1' /><br />
         <span>creator</span> <br />
-        <input type="number" id='fil3' /> <br />
+        <input type="text" id='fil3' /> <br />
         <span>filyal_id</span> <br />
         <input type="number" id='fil4' /> <br />
         <span>time_create</span> <br />
@@ -170,11 +170,11 @@ X
 </div>
         </div>
         <span>mark</span><br />
-        <input type="number" id='bu' /><br />
+        <input type="text" id='bu' /><br />
         <span>text</span><br />
         <input type="text" id='bu2' /><br />
         <span>creator</span> <br />
-        <input type="number" id='bu3' /> <br />
+        <input type="text" id='bu3' /> <br />
         <span>filyal_id</span> <br />
         <input type="number" id='bu4' /> <br />
      
