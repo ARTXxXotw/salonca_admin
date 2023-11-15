@@ -52,19 +52,19 @@ export default function Xususiyat() {
   
       axios.post(`https://salonca.onrender.com/api/xususiyat_mutahasis/`,data).then(res=>{
         alert("Успешно")
-        window.location.reload()
+       
       }).catch(err=>{
         alert("error")
       })
     }
     function izmenit1(){
       var data = new FormData;
-       data.append(`xususiyat_id`, document.querySelector("#category2").value)
-       data.append(`filyal_id`, set1)
+       data.append(`filyal_id`, document.querySelector("#category2").value)
+       data.append(`xususiyat_id`, set1)
   
       axios.post(`https://salonca.onrender.com/api/xususiyat_filyal/`,data).then(res=>{
         alert("Успешно")
-        window.location.reload()
+       
       }).catch(err=>{
         alert("error")
       })
@@ -83,6 +83,7 @@ const [selete1,setSelete1]=useState({})
       setSelete1(id)
       document.querySelector(".bu-filyal-omagad-2a2ssa").style=`display:block`
     }
+
 
     function seletemalumot(){
       axios.delete(`https://salonca.onrender.com/api/xususiyatlar/${selete}`).then(res=>{
@@ -222,7 +223,7 @@ const [selete1,setSelete1]=useState({})
 </div>
          <span>title</span><br />
         <input type="text" id='malumot' /><br />
-        <button onClick={()=>editmalumot()} >dabavit</button>
+        <button onClick={()=>editmalumot()} >edit</button>
     </div>
 </div>
 </div>

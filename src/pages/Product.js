@@ -306,12 +306,14 @@ function deletemutahasis(id){
 }
 
 function  deleteda(){
+
   axios.delete(`https://salonca.onrender.com/api/mutahasis_image/${mutahasi}`).then(res=>{
     alert("Вы удалили этот товар")
     window.location.reload()
   }).catch(err=>{
     alert("error")
   })
+    
 }
 
 function qoshishdwe(){
@@ -381,7 +383,7 @@ function ozgard11(){
   data.append(`image`, document.querySelector("#fila").value)
   data.append(`filyal_id`, document.querySelector("#fila1").value)
 
-     axios.put(`https://salonca.onrender.com/api/mutahasis/${filyal2}`,data).then(res=>{
+     axios.put(`https://salonca.onrender.com/api/filyal_image/${filyal2}`,data).then(res=>{
     alert("Успешно")
     window.location.reload()
   }).catch(err=>{
