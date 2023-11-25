@@ -10,16 +10,16 @@ export default function Xususiyat() {
     const [data2,setData2]=useState([]);
     const [xMutaxasis,setxMutaxasis]=useState([])
     useEffect(()=>{
-        axios.get("https://salonca.onrender.com/api/xususiyatlar/").then(res=>{
+        axios.get("https://fre.abbas.uz/api/xususiyatlar/").then(res=>{
             setData(res.data)
         })
-        axios.get(`https://salonca.onrender.com/api/mutahasis/`).then(res=>{
+        axios.get(`https://fre.abbas.uz/api/mutahasis/`).then(res=>{
           setData1(res.data)
         })
-        axios.get(`https://salonca.onrender.com/api/filyal/`).then(res=>{
+        axios.get(`https://fre.abbas.uz/api/filyal/`).then(res=>{
           setData2(res.data)
         })
-        axios.get(`https://salonca.onrender.com/api/xususiyat_mutahasis/`).then(res=>{
+        axios.get(`https://fre.abbas.uz/api/xususiyat_mutahasis/`).then(res=>{
           setxMutaxasis(res.data)
           console.log(res.data,"salom");
         })
@@ -29,7 +29,7 @@ export default function Xususiyat() {
       var data = new FormData;
       data.append(`title`, document.querySelector("#post").value)
     
-         axios.post(`https://salonca.onrender.com/api/xususiyatlar/`,data).then(res=>{
+         axios.post(`https://fre.abbas.uz/api/xususiyatlar/`,data).then(res=>{
         alert("Успешно")
         window.location.reload()
       }).catch(err=>{
@@ -50,7 +50,7 @@ export default function Xususiyat() {
        data.append(`mutahasis_id`, document.querySelector("#category1").value)
        data.append(`xususiyat_id`, set)
   
-      axios.post(`https://salonca.onrender.com/api/xususiyat_mutahasis/`,data).then(res=>{
+      axios.post(`https://fre.abbas.uz/api/xususiyat_mutahasis/`,data).then(res=>{
         alert("Успешно")
        
       }).catch(err=>{
@@ -62,7 +62,7 @@ export default function Xususiyat() {
        data.append(`filyal_id`, document.querySelector("#category2").value)
        data.append(`xususiyat_id`, set1)
   
-      axios.post(`https://salonca.onrender.com/api/xususiyat_filyal/`,data).then(res=>{
+      axios.post(`https://fre.abbas.uz/api/xususiyat_filyal/`,data).then(res=>{
         alert("Успешно")
        
       }).catch(err=>{
@@ -86,7 +86,7 @@ const [selete1,setSelete1]=useState({})
 
 
     function seletemalumot(){
-      axios.delete(`https://salonca.onrender.com/api/xususiyatlar/${selete}`).then(res=>{
+      axios.delete(`https://fre.abbas.uz/api/xususiyatlar/${selete}`).then(res=>{
         alert("Вы удалили этот товар")
         window.location.reload()
       })
@@ -95,7 +95,7 @@ const [selete1,setSelete1]=useState({})
       var data = new FormData;
       data.append(`title`, document.querySelector("#malumot").value)
     
-         axios.put(`https://salonca.onrender.com/api/xususiyatlar/${selete1}`,data).then(res=>{
+         axios.put(`https://fre.abbas.uz/api/xususiyatlar/${selete1}`,data).then(res=>{
         alert("Успешно")
         window.location.reload()
       }).catch(err=>{

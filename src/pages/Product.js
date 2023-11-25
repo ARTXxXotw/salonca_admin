@@ -12,7 +12,7 @@ export default function Product() {
     const [page,setPage]=useState(1)
 
     useEffect(()=>{
-        axios.get(`https://salonca.onrender.com/api/filyal`).then(res=>{
+        axios.get(`https://fre.abbas.uz/api/filyal`).then(res=>{
             setData(res.data)
             console.log(res.data)
         })
@@ -25,7 +25,7 @@ export default function Product() {
 
    function delet(){
     
-    axios.delete(`https://salonca.onrender.com/api/filyal/${dataiD}`).then(res=>{
+    axios.delete(`https://fre.abbas.uz/api/filyal/${dataiD}`).then(res=>{
       alert("Вы удалили этот товар")
       document.querySelector(".bu-bir").style=`display:none`
       window.location.reload()
@@ -52,7 +52,7 @@ export default function Product() {
   data.append(`min_time`, document.querySelector("#toqqiz").value)
  
   
-    axios.put(`https://salonca.onrender.com/api/filyal/${editID}`,data).then(res=>{
+    axios.put(`https://fre.abbas.uz/api/filyal/${editID}`,data).then(res=>{
       alert("Успешно")
       window.location.reload()
     }).catch(err=>{
@@ -80,7 +80,7 @@ function ozgarID(){
   data.append(`min_time`, document.querySelector("#oz8").value)
  
   
-    axios.post(`https://salonca.onrender.com/api/filyal/`,data).then(res=>{
+    axios.post(`https://fre.abbas.uz/api/filyal/`,data).then(res=>{
       alert("Успешно")
       window.location.reload()
     }).catch(err=>{
@@ -121,9 +121,9 @@ const [filyal2,setFilyal2]=useState([]);
 
 
 useEffect(()=>{
-    axios.get(`https://salonca.onrender.com/api/mutahasis/`).then(res=>{
+    axios.get(`https://fre.abbas.uz/api/mutahasis/`).then(res=>{
       console.log(res.data)  
-      axios.get(`https://salonca.onrender.com/api/category/`).then(res1=>{
+      axios.get(`https://fre.abbas.uz/api/category/`).then(res1=>{
         setData22(res1.data)
         console.log(res.data)
         for (let i = 0; i < res.data.length; i++) {
@@ -136,12 +136,12 @@ useEffect(()=>{
         setData1(res.data)
       })
     })
-    axios.get(`https://salonca.onrender.com/api/mutahasis_time/`).then(res=>{
+    axios.get(`https://fre.abbas.uz/api/mutahasis_time/`).then(res=>{
       console.log(res.data)
       setData4(res.data)
   })
 
-axios.get(`https://salonca.onrender.com/api/filyal_image/`).then(res=>{
+axios.get(`https://fre.abbas.uz/api/filyal_image/`).then(res=>{
   setFilyal(res.data)
 
 })
@@ -165,7 +165,7 @@ function ozgardimi(){
     data.append(`filial_id`, document.querySelector("#op4").value)
     data.append(`price`, document.querySelector("#op5").value)
 
-       axios.put(`https://salonca.onrender.com/api/mutahasis/${edit1ID}`,data).then(res=>{
+       axios.put(`https://fre.abbas.uz/api/mutahasis/${edit1ID}`,data).then(res=>{
       alert("Успешно")
       window.location.reload()
     }).catch(err=>{
@@ -182,7 +182,7 @@ document.querySelector(".bu-filyala").style='display:block'
 }
 function malumotoch(){
 document.querySelector(".bu-filyala").style='display:none'
-axios.delete(`https://salonca.onrender.com/api/mutahasis/${data1iD}`).then(res=>{
+axios.delete(`https://fre.abbas.uz/api/mutahasis/${data1iD}`).then(res=>{
 alert("Вы удалили этот товар")
 window.location.reload()
 }).catch(err=>{
@@ -205,7 +205,7 @@ data.append(`filial_id`,pageiD )
 data.append(`price`, document.querySelector("#nim5").value)
 
 
-  axios.post(`https://salonca.onrender.com/api/mutahasis/`,data).then(res=>{
+  axios.post(`https://fre.abbas.uz/api/mutahasis/`,data).then(res=>{
     alert("Успешно")
     window.location.reload()
   }).catch(err=>{
@@ -215,9 +215,9 @@ data.append(`price`, document.querySelector("#nim5").value)
 
 
 function boshqapage(id){
-  axios.get(`https://salonca.onrender.com/api/mutahasis/`).then(res=>{
+  axios.get(`https://fre.abbas.uz/api/mutahasis/`).then(res=>{
     console.log(res.data)  
-    axios.get(`https://salonca.onrender.com/api/category/`).then(res1=>{
+    axios.get(`https://fre.abbas.uz/api/category/`).then(res1=>{
       setData22(res1.data)
       console.log(res.data)
       for (let i = 0; i < res.data.length; i++) {
@@ -238,14 +238,14 @@ function boshqapage(id){
 }
 function pageyana(id){
   setPage1iD(id)
-  axios.get(`https://salonca.onrender.com/api/mutahasis_time/`).then(res=>{
+  axios.get(`https://fre.abbas.uz/api/mutahasis_time/`).then(res=>{
     const Filter=res.data.filter(item=>item.mutahasis_id==id)
     setData4(Filter)
     console.log(Filter,"Salom1");
     setPage(3)
   })
 
-  axios.get(`https://salonca.onrender.com/api/mutahasis_image/`).then(res=>{
+  axios.get(`https://fre.abbas.uz/api/mutahasis_image/`).then(res=>{
       const Filter=res.data.filter(item=>item.mutahasis_id==id)
       setMutahasis(Filter)
     console.log(Filter,"Salom1");
@@ -261,7 +261,7 @@ function tezoch(id){
     document.querySelector(".bu-filyalas").style=`display:block`
 }
 function ovda(){
-    axios.delete(`https://salonca.onrender.com/api/mutahasis_time/${data4iD}`).then(res=>{
+    axios.delete(`https://fre.abbas.uz/api/mutahasis_time/${data4iD}`).then(res=>{
         alert("Вы удалили этот товар")
         window.location.reload()
       }).catch(err=>{
@@ -279,7 +279,7 @@ var data = new FormData;
 data.append(`time`, document.querySelector("#fil").value)
 data.append(`mutahasis_id`, document.querySelector("#fil1").value)
 
-   axios.put(`https://salonca.onrender.com/api/mutahasis_time/${edit4iD}`,data).then(res=>{
+   axios.put(`https://fre.abbas.uz/api/mutahasis_time/${edit4iD}`,data).then(res=>{
   alert("Успешно")
   window.location.reload()
 }).catch(err=>{
@@ -292,7 +292,7 @@ function dabavit(){
 var data = new FormData;
 data.append(`time`, document.querySelector("#filp").value)
 data.append(`mutahasis_id`, document.querySelector("#filp1").value)
-   axios.post(`https://salonca.onrender.com/api/mutahasis_time/`,data).then(res=>{
+   axios.post(`https://fre.abbas.uz/api/mutahasis_time/`,data).then(res=>{
   alert("Успешно")
   window.location.reload()
 }).catch(err=>{
@@ -307,7 +307,7 @@ function deletemutahasis(id){
 
 function  deleteda(){
 
-  axios.delete(`https://salonca.onrender.com/api/mutahasis_image/${mutahasi}`).then(res=>{
+  axios.delete(`https://fre.abbas.uz/api/mutahasis_image/${mutahasi}`).then(res=>{
     alert("Вы удалили этот товар")
     window.location.reload()
   }).catch(err=>{
@@ -321,7 +321,7 @@ function qoshishdwe(){
   data.append(`image`, document.querySelector("#nnn").value)
   data.append(`mutahasis_id`, document.querySelector("#nnn2").value)
 
-     axios.post(`https://salonca.onrender.com/api/mutahasis_image/`,data).then(res=>{
+     axios.post(`https://fre.abbas.uz/api/mutahasis_image/`,data).then(res=>{
     alert("Успешно")
     window.location.reload()
   }).catch(err=>{
@@ -340,7 +340,7 @@ function lala(){
   data.append(`image`, document.querySelector("#nnn3").value)
   data.append(`mutahasis_id`, document.querySelector("#nnn4").value)
 
-     axios.put(`https://salonca.onrender.com/api/mutahasis_image/${mutahasi1}`,data).then(res=>{
+     axios.put(`https://fre.abbas.uz/api/mutahasis_image/${mutahasi1}`,data).then(res=>{
     alert("Успешно")
     window.location.reload()
   }).catch(err=>{
@@ -352,7 +352,7 @@ function lala1(){
   data.append(`image`, document.querySelector("#nnn5").value)
   data.append(`filyal_id`, document.querySelector("#nnn6").value)
 
-     axios.post(`https://salonca.onrender.com/api/filyal_image/`,data).then(res=>{
+     axios.post(`https://fre.abbas.uz/api/filyal_image/`,data).then(res=>{
     alert("Успешно")
     window.location.reload()
   }).catch(err=>{
@@ -366,7 +366,7 @@ function filyaldelete(id){
 }
 
 function malumotoch11(){
-  axios.delete(`https://salonca.onrender.com/api/filyal_image/${filyal1}`).then(res=>{
+  axios.delete(`https://fre.abbas.uz/api/filyal_image/${filyal1}`).then(res=>{
     alert("Вы удалили этот товар")
     window.location.reload()
   })
@@ -383,7 +383,7 @@ function ozgard11(){
   data.append(`image`, document.querySelector("#fila").value)
   data.append(`filyal_id`, document.querySelector("#fila1").value)
 
-     axios.put(`https://salonca.onrender.com/api/filyal_image/${filyal2}`,data).then(res=>{
+     axios.put(`https://fre.abbas.uz/api/filyal_image/${filyal2}`,data).then(res=>{
     alert("Успешно")
     window.location.reload()
   }).catch(err=>{

@@ -1,3 +1,3 @@
-var url = 'https://salonca.onrender.com'
+var url = 'https://fre.abbas.uz'
 
 export default url

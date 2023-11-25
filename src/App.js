@@ -17,6 +17,7 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Main from "./components/layout/Main";
 import User from "./pages/User"
+import Otziv from "./pages/Otziv"
 import "antd/dist/antd.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
@@ -45,6 +46,7 @@ function App() {
         <Route exact path="/billing" component={Billing} />
         <Route exact path="/rtl" component={Rtl} />
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/Otziv" component={Otziv} />
         <Redirect from="/Product" to="/Product" />
         </Main>
         )}

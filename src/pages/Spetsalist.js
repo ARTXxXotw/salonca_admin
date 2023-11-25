@@ -9,7 +9,7 @@ export default function Zakaz() {
     const [dataiD,setDataiD]=useState([])
 
     useEffect(()=>{
-        axios.get(`https://salonca.onrender.com/api/mutahasis/`).then(res=>{
+        axios.get(`https://fre.abbas.uz/api/mutahasis/`).then(res=>{
             setData(res.data)
           console.log(res.data)  
         })
@@ -29,7 +29,7 @@ export default function Zakaz() {
         data.append(`filial_id`, document.querySelector("#op4").value)
         data.append(`price`, document.querySelector("#op5").value)
     
-           axios.put(`https://salonca.onrender.com/api/mutahasis/${editID}`,data).then(res=>{
+           axios.put(`https://fre.abbas.uz/api/mutahasis/${editID}`,data).then(res=>{
           alert("Успешно")
           window.location.reload()
         }).catch(err=>{
@@ -46,7 +46,7 @@ function min(id){
 }
 function malumotoch(){
     document.querySelector(".bu-filyala").style='display:none'
-    axios.delete(`https://salonca.onrender.com/api/mutahasis/${dataiD}`).then(res=>{
+    axios.delete(`https://fre.abbas.uz/api/mutahasis/${dataiD}`).then(res=>{
     alert("Вы удалили этот товар")
     window.location.reload()
   }).catch(err=>{
@@ -69,7 +69,7 @@ function qoshisihss(){
     data.append(`price`, document.querySelector("#nim5").value)
    
     
-      axios.post(`https://salonca.onrender.com/api/mutahasis/`,data).then(res=>{
+      axios.post(`https://fre.abbas.uz/api/mutahasis/`,data).then(res=>{
         alert("Успешно")
         window.location.reload()
       }).catch(err=>{

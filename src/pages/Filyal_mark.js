@@ -22,7 +22,7 @@ function deletefilyal(id){
 }
 function deleteFilyal(){
 
-    axios.delete(`https://salonca.onrender.com/api/filyal_mark/${dataiD}`).then(res=>{
+    axios.delete(`https://fre.abbas.uz/api/filyal_mark/${dataiD}`).then(res=>{
         alert("Вы удалили этот товар")
         document.querySelector(".bu-filyal").style=`display:none`
         window.location.reload()
@@ -46,7 +46,7 @@ function ozgarput(){
     data.append(`time_create`, document.querySelector("#fil5").value)
     data.append(`time_update`, document.querySelector("#fil6").value)
 
-       axios.post(`https://salonca.onrender.com/api/filyal_mark/`,data).then(res=>{
+       axios.post(`https://fre.abbas.uz/api/filyal_mark/`,data).then(res=>{
       alert("Успешно")
       window.location.reload()
     }).catch(err=>{
@@ -66,7 +66,7 @@ function ozgardimi(){
     data.append(`filyal_id`, document.querySelector("#bu4").value)
     data.append(`look`,true)
 
-       axios.put(`https://salonca.onrender.com/api/filyal_mark/${editiD}`,data).then(res=>{
+       axios.put(`https://fre.abbas.uz/api/filyal_mark/${editiD}`,data).then(res=>{
       alert("Успешно")
       window.location.reload()
     }).catch(err=>{

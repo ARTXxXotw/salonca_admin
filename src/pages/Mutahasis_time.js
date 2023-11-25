@@ -6,7 +6,7 @@ export default function Mutahasis_time() {
     const [dataiD,setDataiD]=useState([]);
     const [editiD,setEditiD]=useState([]);
     useEffect(()=>{
-        axios.get(`https://salonca.onrender.com/api/mutahasis_time/`).then(res=>{
+        axios.get(`https://fre.abbas.uz/api/mutahasis_time/`).then(res=>{
             setData(res.data)
             console.log(res.data)
         })
@@ -16,7 +16,7 @@ export default function Mutahasis_time() {
         document.querySelector(".bu-filyalas").style=`display:block`
     }
     function ovda(){
-        axios.delete(`https://salonca.onrender.com/api/mutahasis_time/${dataiD}`).then(res=>{
+        axios.delete(`https://fre.abbas.uz/api/mutahasis_time/${dataiD}`).then(res=>{
             alert("Вы удалили этот товар")
             window.location.reload()
           }).catch(err=>{
@@ -34,7 +34,7 @@ function ozgard(){
     data.append(`time`, document.querySelector("#fil").value)
     data.append(`mutahasis_id`, document.querySelector("#fil1").value)
 
-       axios.put(`https://salonca.onrender.com/api/mutahasis_time/${editiD}`,data).then(res=>{
+       axios.put(`https://fre.abbas.uz/api/mutahasis_time/${editiD}`,data).then(res=>{
       alert("Успешно")
       window.location.reload()
     }).catch(err=>{
@@ -47,7 +47,7 @@ function dabavit(){
     var data = new FormData;
     data.append(`time`, document.querySelector("#filp").value)
     data.append(`mutahasis_id`, document.querySelector("#filp1").value)
-       axios.post(`https://salonca.onrender.com/api/mutahasis_time/`,data).then(res=>{
+       axios.post(`https://fre.abbas.uz/api/mutahasis_time/`,data).then(res=>{
       alert("Успешно")
       window.location.reload()
     }).catch(err=>{

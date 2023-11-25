@@ -261,6 +261,19 @@ function Sidenav({ color }) {
             <span className="label">Rayon</span>
           </NavLink>
         </Menu.Item>
+        <Menu.Item key="3">
+          <NavLink to="/Otziv">
+            <span
+              className="icon"
+              style={{
+                background: page === "Otziv" ? color : "",
+              }}
+            >
+              {tables}
+            </span>
+            <span className="label">Otziv</span>
+          </NavLink>
+        </Menu.Item>
         {/* <Menu.Item key="2">
           <NavLink to="/Mutahasis_time">
             <span

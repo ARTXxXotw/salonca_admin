@@ -6,7 +6,7 @@ export default function Zakaz() {
     const [dataiD,setDataiD]=useState([])
     const [data1iD,setData1iD]=useState([])
     useEffect(()=>{
-        axios.get(`https://salonca.onrender.com/api/zakaz`).then(res=>{
+        axios.get(`https://fre.abbas.uz/api/zakaz`).then(res=>{
             setData(res.data)
 
         })
@@ -22,7 +22,7 @@ export default function Zakaz() {
         data.append(`day_zakaz`, document.querySelector("#fil3").value)
         data.append(`mutahasis_id`, document.querySelector("#fil4").value)
     
-        axios.post(`https://salonca.onrender.com/api/zakaz`,data).then(res=>{
+        axios.post(`https://fre.abbas.uz/api/zakaz`,data).then(res=>{
           alert("Успешно")
           window.location.reload()
         }).catch(err=>{
@@ -32,7 +32,7 @@ export default function Zakaz() {
     }
 function deleteData(){
     
-    axios.delete(`https://salonca.onrender.com/api/zakaz/${dataiD}`).then(res=>{
+    axios.delete(`https://fre.abbas.uz/api/zakaz/${dataiD}`).then(res=>{
         alert("Вы удалили ")
         window.location.reload()
       }).catch(err=>{
@@ -55,7 +55,7 @@ function editmetod(){
     data.append(`day_zakaz`, document.querySelector("#xa3").value)
     data.append(`mutahasis_id`, document.querySelector("#xa4").value)
 
-    axios.put(`https://salonca.onrender.com/api/zakaz/${data1iD}`,data).then(res=>{
+    axios.put(`https://fre.abbas.uz/api/zakaz/${data1iD}`,data).then(res=>{
       alert("Успешно")
       window.location.reload()
     }).catch(err=>{
