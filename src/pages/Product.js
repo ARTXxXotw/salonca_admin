@@ -692,6 +692,7 @@ function editmetod(){
 
 
 
+
 <div className="bu-filyal-42">
 
 <div className="modal-delete">
@@ -814,6 +815,7 @@ function editmetod(){
 <div className="all-butnnon">
     <button onClick={()=>document.querySelector(".bu-filyal-6").style=`display:block`}>dabavit</button>
 </div>
+<p>время</p>
 <table id="customers">
   <tr>
     <th>id</th>
@@ -822,6 +824,7 @@ function editmetod(){
     <th>удалить</th>
     <th>редактировать</th>
   </tr>
+  
 {data4.map((item)=>{
     return(
         <>

@@ -88,7 +88,7 @@ function abzaljini(){
         <div className="qoshish">
             <button onClick={()=>qoshishmalumot()}>Добавить</button>
         </div>
-
+<p>Отзывы</p>
         <table id="customers">
   <tr>
     <th>id</th>
