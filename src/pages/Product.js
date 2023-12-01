@@ -123,6 +123,9 @@ const [filyal1,setFilyal1]=useState([]);
 const [filyal2,setFilyal2]=useState([]);
 const [mark,setMark]=useState([]);
 
+const [editmetid,setEditmetodd]=useState([]);
+const [editmetid1,setEditmetodd1]=useState([]);
+
 
 useEffect(()=>{
     axios.get(`https://fre.abbas.uz/api/mutahasis/`).then(res=>{
@@ -405,7 +408,44 @@ function ozgard11(){
   })
 }
 
+function putmetodfilyalId(id){
+  setEditmetodd(id)
+  document.querySelector(".bu-iki-2asddd").style=`display:flex`
+}
 
+function editmetod(){
+
+  var data = new FormData;
+  data.append(`text`, document.querySelector("#valueinp").value)
+  data.append(`creator`, document.querySelector("#valueinp2").value)
+  data.append(`filyal_id`,pageiD)
+  data.append(`look`,true)
+  data.append(`mark`,4)
+  
+     axios.put(`https://fre.abbas.uz/api/filyal_mark/${editmetid}`,data).then(res=>{
+    alert("Успешно")
+    window.location.reload()
+  }).catch(err=>{
+    alert("error")
+  })
+  }
+
+
+  function deletemetodfilyalId(id){
+    setEditmetodd1(id)
+    document.querySelector(".bu-filyal").style=`display:flex`
+  }
+
+
+
+  function deleteFilyal(){
+    axios.delete(`https://fre.abbas.uz/api/filyal_mark/${editmetid1}`).then(res=>{
+        alert("Вы удалили")
+        window.location.reload()
+      }).catch(err=>{
+        alert("error")
+      })
+  }
 
   return (
     <div>
@@ -591,7 +631,7 @@ function ozgard11(){
 
     
 </table>
-
+<p> Filyal  Отзывы</p>
 <table id="customers">
   <tr>
     <th>id</th>
@@ -609,14 +649,48 @@ function ozgard11(){
         <td>{item.text}</td>
         <td>{item.creator}</td>
         <td>{item.time_create}</td>
-        <td><button>редактировать</button></td>
-        <td><button>удалить</button></td>
+        <td><button onClick={()=>putmetodfilyalId(item.id)}>редактировать</button></td>
+        <td><button onClick={()=>deletemetodfilyalId(item.id)}>удалить</button></td>
      </tr>
       </>
     )
   })}
     
 </table>
+
+
+
+<div className="bu-iki-2asddd" style={{display:"none"}}>
+<div className="modal-delete">
+    <div className="modal-ichi-inp">
+      <div className="x-dv">
+        <div className="xx" onClick={()=>document.querySelector(".bu-iki-2asddd").style=`display:none`}>
+          X
+        </div>
+      </div>
+      <span>text</span> <br />
+      <input type="text" id='valueinp' /> <br />
+      <span>creator</span> <br />
+      <input type="text" id='valueinp2' /> <br />
+      <button onClick={()=>editmetod()}>edit</button>
+    </div>
+</div>
+</div>
+
+
+<div className="bu-filyal">
+<div className="modal-delete">
+    <div className="modal-ichi">
+      <p>Вы действительно хотите удалить</p>
+      <div className="btn-modal">
+      <button onClick={()=>deleteFilyal()}>ДА</button>
+      <button onClick={()=>document.querySelector(".bu-filyal").style=`display:none`}>Нет</button>
+      </div>
+    </div>
+</div>
+</div>
+
+
 
 <div className="bu-filyal-42">
 
