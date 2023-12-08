@@ -27,11 +27,10 @@ export default function Otziv() {
         <table id="customers">
   <tr>
     <th>id</th>
-    <th>nomer</th>
+    <th>телефон</th>
     <th>имя</th>
     <th>creator</th>
-    <th>mutahasis_id</th>
-    <th>delete</th>
+    <th>удалить</th>
   </tr>
   {data.map((item)=>{
     return(
@@ -41,8 +40,7 @@ export default function Otziv() {
             <td>{item.nomer}</td>
             <td>{item.ism}</td>
             <td>{item.creator}</td>
-            <td>{item.mutahasis_id}</td>
-            <td><button onClick={()=>komentDeleteId(item.id)}>delete</button></td>
+            <td><button onClick={()=>komentDeleteId(item.id)}>удалить</button></td>
         </tr>
         </>
     )
@@ -53,7 +51,7 @@ export default function Otziv() {
 <div className="bu-filyala-assdde">
 <div className="modal-delete">
     <div className="modal-ichi">
-      <p>Вы действительно хотите удалить этот</p>
+      <p>Вы действительно хотите удалить</p>
       <div className="btn-modal">
       <button onClick={()=>deletemalumot()}>ДА</button>
       <button onClick={()=>document.querySelector(".bu-filyala-assdde").style=`display:none`}>Нет</button>

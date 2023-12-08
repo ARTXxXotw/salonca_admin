@@ -23,7 +23,7 @@ function deletefilyal(id){
 function deleteFilyal(){
 
     axios.delete(`https://fre.abbas.uz/api/filyal_mark/${dataiD}`).then(res=>{
-        alert("Вы удалили этот товар")
+        alert("Вы удалили этот  Отзыв")
         document.querySelector(".bu-filyal").style=`display:none`
         window.location.reload()
       }).catch(err=>{
@@ -93,13 +93,13 @@ function abzaljini(){
   <tr>
     <th>id</th>
     <th>mark</th>
-    <th>text</th>
+    <th>текст</th>
     <th>creator</th>
     <th>filyal_id</th>
     <th>time_create</th>
     <th>time_update</th>
-    <th>delete</th>
-    <th>edit</th>
+    <th>удалить</th>
+    <th>редактировать</th>
   </tr>
   {data.map((item)=>{
     return(
@@ -110,10 +110,10 @@ function abzaljini(){
             <td>{item.text}</td>
             <td>{item.creator}</td>
             <td>{item.filyal_id}</td>
-            <td>{item.time_create}</td>
-            <td>{item.time_update}</td>
-            <td><button onClick={()=>deletefilyal(item.id)}>delete</button></td>
-            <td><button onClick={()=>minakh(item.id)}>edit</button></td>
+            <td>{item.time_create.slice(0,10)}</td>
+            <td>{item.time_update.slice(0,10)}</td>
+            <td><button onClick={()=>deletefilyal(item.id)}>удалить</button></td>
+            <td><button onClick={()=>minakh(item.id)}>редактировать</button></td>
         </tr> 
         </>
     )
@@ -124,7 +124,7 @@ function abzaljini(){
 <div className="bu-filyal">
 <div className="modal-delete">
     <div className="modal-ichi">
-      <p>Вы действительно хотите удалить этот filyal</p>
+      <p>Вы действительно хотите удалить </p>
       <div className="btn-modal">
       <button onClick={()=>deleteFilyal()}>ДА</button>
       <button onClick={()=>document.querySelector(".bu-filyal").style=`display:none`}>Нет</button>
@@ -144,16 +144,12 @@ function abzaljini(){
 </div>
         <span>mark</span><br />
         <input type="text" id='fil' /><br />
-        <span>text</span><br />
+        <span>текст</span><br />
         <input type="text" id='fil1' /><br />
         <span>creator</span> <br />
         <input type="text" id='fil3' /> <br />
         <span>filyal_id</span> <br />
         <input type="number" id='fil4' /> <br />
-        <span>time_create</span> <br />
-        <input type="text" id='fil5' /> <br />
-        <span>time_update</span> <br />
-        <input type="text" id='fil6' /> <br />
         <button onClick={()=>ozgarput()}>добавить</button>
     </div>
 </div>
@@ -171,14 +167,14 @@ X
         </div>
         <span>mark</span><br />
         <input type="text" id='bu' /><br />
-        <span>text</span><br />
+        <span>текст</span><br />
         <input type="text" id='bu2' /><br />
         <span>creator</span> <br />
         <input type="text" id='bu3' /> <br />
         <span>filyal_id</span> <br />
         <input type="number" id='bu4' /> <br />
      
-        <button onClick={()=>ozgardimi()}>edit</button>
+        <button onClick={()=>ozgardimi()}>редактировать</button>
     </div>
 </div>
 </div>

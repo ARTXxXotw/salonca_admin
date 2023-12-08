@@ -54,15 +54,15 @@ export default function Metro() {
   return (
     <div>
         <div className="all-btn">
-            <button onClick={()=>qoshish()}>dabavit</button>
+            <button onClick={()=>qoshish()}>добавить</button>
         </div>
 
               <table id="customers">
   <tr>
     <th>id</th>
-    <th>title</th>
-    <th>delete</th>
-    <th>edit</th>
+    <th>текст</th>
+    <th>удалить</th>
+    <th>редактировать</th>
   </tr>
     {data.map((item)=>{
         return(
@@ -70,8 +70,8 @@ export default function Metro() {
         <tr>
             <td>{item.id}</td>
             <td>{item.title}</td>
-            <td><button onClick={()=>deletemodal(item.id)}>delete</button></td>
-            <td><button onClick={()=>editmalumot(item.id)}>edit</button></td>
+            <td><button onClick={()=>deletemodal(item.id)}>удалить</button></td>
+            <td><button onClick={()=>editmalumot(item.id)}>редактировать</button></td>
         </tr>
             </>
         )
@@ -81,7 +81,7 @@ export default function Metro() {
 <div className="bu-filyala-assdde">
 <div className="modal-delete">
     <div className="modal-ichi">
-      <p>Вы действительно хотите удалить этот</p>
+      <p>Вы действительно хотите удалить этот метро</p>
       <div className="btn-modal">
       <button onClick={()=>deletemalumot()}>ДА</button>
       <button onClick={()=>document.querySelector(".bu-filyala-assdde").style=`display:none`}>Нет</button>
@@ -101,9 +101,9 @@ export default function Metro() {
   X 
 </div>
 </div>
-        <span>title</span><br />
+        <span>текст</span><br />
         <input type="text" id='nnnaa' /><br />
-        <button onClick={()=>postmetod()} >dabavit</button>
+        <button onClick={()=>postmetod()} >добавить</button>
     </div>
 </div>
 </div>
@@ -118,9 +118,9 @@ export default function Metro() {
   X 
 </div>
 </div>
-        <span>title</span><br />
+        <span>текст</span><br />
         <input type="text" id='nnnaa1' /><br />
-        <button onClick={()=>editmetod()} >edit</button>
+        <button onClick={()=>editmetod()} >редактировать</button>
     </div>
 </div>
 </div>

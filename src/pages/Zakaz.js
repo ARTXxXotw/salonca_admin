@@ -20,7 +20,7 @@ export default function Zakaz() {
         data.append(`time_end`, document.querySelector("#fil1").value)
         data.append(`time_start`, document.querySelector("#fil2").value)
         data.append(`day_zakaz`, document.querySelector("#fil3").value)
-        data.append(`mutahasis_id`, document.querySelector("#fil4").value)
+        data.append(`mutahasis_id`,1)
     
         axios.post(`https://fre.abbas.uz/api/zakaz`,data).then(res=>{
           alert("Успешно")
@@ -53,7 +53,7 @@ function editmetod(){
     data.append(`time_end`, document.querySelector("#xa1").value)
     data.append(`time_start`, document.querySelector("#xa2").value)
     data.append(`day_zakaz`, document.querySelector("#xa3").value)
-    data.append(`mutahasis_id`, document.querySelector("#xa4").value)
+    data.append(`mutahasis_id`,1)
 
     axios.put(`https://fre.abbas.uz/api/zakaz/${data1iD}`,data).then(res=>{
       alert("Успешно")
@@ -67,7 +67,7 @@ function editmetod(){
   return (
     <div>
         <div className="all-btn">
-            <button onClick={()=>document.querySelector(".bu-filyal-2saw").style=`display:block`}>dabavit</button>
+            <button onClick={()=>document.querySelector(".bu-filyal-2saw").style=`display:block`}>добавить</button>
         </div>
           <table id="customers">
   <tr>
@@ -75,9 +75,8 @@ function editmetod(){
     <th>time_end</th>
     <th>time_start</th>
     <th>day_zakaz</th>
-    <th>mutahasis_id</th>
-    <th>delete</th>
-    <th>edit</th>
+    <th>удалить</th>
+    <th>редактировать</th>
   </tr>
   {data.map((item)=>{
     return(
@@ -87,9 +86,8 @@ function editmetod(){
             <td>{item.time_end}</td>
             <td>{item.time_start}</td>
             <td>{item.day_zakaz}</td>
-            <td>{item.mutahasis_id}</td>
-            <td><button onClick={()=>deletemalumot(item.id)}>delete</button></td>
-            <td><button onClick={()=>editmalumot(item.id)}>edit </button></td>
+            <td><button onClick={()=>deletemalumot(item.id)}>удалить</button></td>
+            <td><button onClick={()=>editmalumot(item.id)}>редактировать </button></td>
         </tr> 
         
         </>
@@ -114,8 +112,6 @@ function editmetod(){
         <input type="time" id='fil2' /><br />
         <span>day_zakaz</span> <br />
         <input type="date" id='fil3' /> <br />
-        <span>mutahasis_id</span> <br />
-        <input type="number" id='fil4' /> <br />
         <button onClick={()=>putmetod()} >добавить</button>
     </div>
 </div>
@@ -136,9 +132,7 @@ function editmetod(){
         <input type="time" id='xa2' /><br />
         <span>day_zakaz</span> <br />
         <input type="date" id='xa3' /> <br />
-        <span>mutahasis_id</span> <br />
-        <input type="number" id='xa4' /> <br />
-        <button onClick={()=>editmetod()} >izmenit</button>
+        <button onClick={()=>editmetod()} >изменить</button>
     </div>
 </div>
 </div>

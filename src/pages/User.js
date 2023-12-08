@@ -20,34 +20,34 @@ export default function User() {
 
   function userDelete(){
     axios.delete(`${url}/api/users/${userId}`).then(res=>{
-        alert("delete")
+        alert("Вы удалили этого пользователя")
         window.location.reload()
     }).catch(err=>{
         alert("O'chirilmadi")
     })
   }
 
-  function userPutOpen(item){
-    document.querySelector("#phone_user").value=item.phone
-    document.querySelector("#superadmin_username").value=item.username
-    document.querySelector("#superadmin_user").value=item.superadmin
-    document.querySelector("#email_user").value=item.email
-    setUserId(item.id)
+  function userPutOpen(id){
+
+    setUserId(id)
     document.querySelector(".bu-iki-2").style="display:block"
   }
 
+
+
   function userPut(){
     var formdata=new FormData()
-    formdata.append("phone",document.querySelector("#phone_user").value)
+    formdata.append("phone",null)
+    formdata.append("password",document.querySelector("#parol").value)
     formdata.append("username",document.querySelector("#superadmin_username").value)
-    formdata.append("superadmin",document.querySelector("#superadmin_user").value)
+    formdata.append("superadmin",false)
     formdata.append("email",document.querySelector("#email_user").value)
 
     axios.put(`${url}/api/users/${userId}`,formdata).then(res=>{
         alert("успешно")
         window.location.reload()
     }).catch(err=>{
-        alert("ishlamdi")
+        alert("error")
     })
   }
 
@@ -55,27 +55,26 @@ export default function User() {
 
   return (
     <div>
+      <p>Все пользователи</p>
     <table id="customers">
     <tr>
       <th>id</th>
-      <th>phone</th>
-      <th>username</th>
-      <th>superadmin</th>
-      <th>email</th>
-      <th>delete</th>
-      <th >edit</th>
+      <th>имя пользователя</th>
+      <th>пароль</th>
+      <th>электронная почта</th>
+      <th>удалить</th>
+      <th >редактировать</th>
   </tr>
   {user.map((item)=>{
     return(
       <>
     <tr>
         <td>{item.id}</td>
-        <td>{item.phone}</td>
         <td>{item.username}</td>
-        <td>{item.superadmin}</td>
+        <td>{item.password}</td>
         <td>{item.email}</td>
-        <td><button onClick={()=>userDeleteOpen(item.id)}>delete</button></td>
-        <td><button onClick={()=>userPutOpen(item)}>edit</button></td>
+        <td><button onClick={()=>userDeleteOpen(item.id)}>удалить</button></td>
+        <td><button onClick={()=>userPutOpen(item.id)}>редактировать</button></td>
   </tr>
       </>
     )
@@ -85,7 +84,7 @@ export default function User() {
   <div className="bu-bir">
   <div className="modal-delete">
     <div className="modal-ichi">
-      <p>Вы действительно хотите удалить этот товар</p>
+      <p>Вы действительно хотите удалить этого пользователя</p>
       <div className="btn-modal">
       <button onClick={()=>userDelete()}>ДА</button>
       <button onClick={()=>document.querySelector(".bu-bir").style=`display:none`}>Нет</button>
@@ -101,15 +100,13 @@ export default function User() {
           X
         </div>
       </div>
-      <span>phone</span> <br />
-      <input type="text" id='phone_user' /> <br />
-      <span>username</span> <br />
+      <span>имя пользователя</span> <br />
       <input type="text" id='superadmin_username' /><br />
-      <span>superadmin</span><br />
-      <input type="text" id='superadmin_user' /><br />
-      <span>email</span><br />
+      <span>пароль</span> <br />
+      <input type="text" id='parol' /><br />
+      <span>электронная почта</span><br />
       <input type="text" id='email_user' /><br />
-      <button onClick={()=>userPut()}>edit</button>
+      <button onClick={()=>userPut()}>редактировать</button>
     </div>
 </div>
   </div>

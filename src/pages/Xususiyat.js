@@ -87,7 +87,7 @@ const [selete1,setSelete1]=useState({})
 
     function seletemalumot(){
       axios.delete(`https://fre.abbas.uz/api/xususiyatlar/${selete}`).then(res=>{
-        alert("Вы удалили этот товар")
+        alert("Вы удалили этот Особенности")
         window.location.reload()
       })
     }
@@ -108,16 +108,17 @@ const [selete1,setSelete1]=useState({})
 
 
       <div className="all-btn">
-        <button onClick={()=>document.querySelector(".bu-filyal-omagad-2ss2").style=`display:block`}>dabavit</button>
+        <button onClick={()=>document.querySelector(".bu-filyal-omagad-2ss2").style=`display:block`}>добавить</button>
       </div>
+      <p>Особенности</p>
  <table id="customers">
     <tr>
     <th>id</th>
-    <th>title</th>
+    <th>текст</th>
     <th>mutahasis_id</th>
     <th>filyal_id</th>
-    <th>delete</th>
-    <th>edit</th>
+    <th>удалить</th>
+    <th>редактировать</th>
   </tr>
   {data.map((item)=>{
     return(
@@ -127,8 +128,8 @@ const [selete1,setSelete1]=useState({})
          <td>{item.title}</td>
          <td><button onClick={()=>mutahasis_id(item.id)}>mutahasis_id</button></td>
          <td><button onClick={()=>filyal_id(item.id)}>filyal_id</button></td>
-         <td><button onClick={()=>deletexusisiyat(item.id)}>delete</button></td>
-         <td><button onClick={()=>editxusisiyat(item.id)}>edit</button></td>
+         <td><button onClick={()=>deletexusisiyat(item.id)}>удалить</button></td>
+         <td><button onClick={()=>editxusisiyat(item.id)}>редактировать</button></td>
      </tr>
       </>
     )
@@ -146,10 +147,10 @@ const [selete1,setSelete1]=useState({})
   X 
 </div>
 </div>
-        <span>title</span><br />
+        <span>текст</span><br />
         <input type="text" id='post' /><br />
         <br />
-        <button onClick={()=>postmalumot()} >dabavit</button>
+        <button onClick={()=>postmalumot()} >добавить</button>
     </div>
 </div>
 </div>
@@ -172,7 +173,7 @@ const [selete1,setSelete1]=useState({})
   })}
 </select><br />
 <div className='height'></div>
-<button onClick={()=>izmenit()}>izmenit</button>
+<button onClick={()=>izmenit()}>изменить</button>
     </div>
 </div>
 </div>
@@ -196,7 +197,7 @@ const [selete1,setSelete1]=useState({})
   })}
 </select><br />
 <div className='height'></div>
-<button onClick={()=>izmenit1()}>izmenit</button>
+<button onClick={()=>izmenit1()}>изменить</button>
     </div>
 </div>
 </div>
@@ -221,7 +222,7 @@ const [selete1,setSelete1]=useState({})
   X 
 </div>
 </div>
-         <span>title</span><br />
+         <span>текст</span><br />
         <input type="text" id='malumot' /><br />
         <button onClick={()=>editmalumot()} >edit</button>
     </div>

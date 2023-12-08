@@ -192,7 +192,7 @@ function Sidenav({ color }) {
             >
               {tables}
             </span>
-            <span className="label">Filyal_mark</span>
+            <span className="label">Отзывы</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="2">
@@ -205,7 +205,7 @@ function Sidenav({ color }) {
             >
               {tables}
             </span>
-            <span className="label">Xususiyat</span>
+            <span className="label">Особенности</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="2">
@@ -218,7 +218,7 @@ function Sidenav({ color }) {
             >
               {tables}
             </span>
-            <span className="label">Zakaz</span>
+            <span className="label">Заказы</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="2">
@@ -231,7 +231,7 @@ function Sidenav({ color }) {
             >
               {tables}
             </span>
-            <span className="label">User</span>
+            <span className="label">Пользователи</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="2">
@@ -244,7 +244,7 @@ function Sidenav({ color }) {
             >
               {tables}
             </span>
-            <span className="label">Metro</span>
+            <span className="label">метро</span>
           </NavLink>
         </Menu.Item>
         
@@ -258,7 +258,7 @@ function Sidenav({ color }) {
             >
               {tables}
             </span>
-            <span className="label">Rayon</span>
+            <span className="label">район</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="3">
